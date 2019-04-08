@@ -6,10 +6,15 @@ class UsersController < ApplicationController
     erb :'users/login.html' 
   end
 
+  post '/login' do 
+    @user = User.find(params[:id])
+  end
+
+
   get '/signup' do 
     erb :'users/signup.html'
   end
-  
+
   
   
   # GET: /users
