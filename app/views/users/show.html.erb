@@ -1,1 +1,11 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h3>This is the show page for an individual instance of your model.</h3>
+
+<%=@user.name%>
+<br>
+<ol>
+    <%@user.trails.each do |trail|%>
+        <li><%= trail.name%>
+        <%= trail.description%></li>
+    <%end%>
+</ol>
+    
