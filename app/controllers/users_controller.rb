@@ -23,13 +23,6 @@ class UsersController < ApplicationController
     erb :'users/signup.html'
   end
 
-  post '/signup' do 
-    # binding.pry
-    user = User.create(params)
-    session[:user_id] = user.id 
-    binding.pry
-    redirect "/users/#{user.id}"
-  end
   
   # GET: /users
   get "/users" do
@@ -43,7 +36,14 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/users" do
-    redirect "/users"
+    # binding.pry
+    if params[:name] != "" && params[:password] != "" && params[:email] != ""
+      User.create(params)
+      session[:user_id] = User.last.id
+      redirect "/users/#{User.last.id}"
+    else 
+      redirect '/signup'
+    end    
   end
 
   # GET: /users/5
