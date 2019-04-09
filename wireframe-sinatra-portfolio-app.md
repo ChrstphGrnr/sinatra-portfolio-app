@@ -14,6 +14,7 @@
 
 
 ### Attributes for each model
+- test
 
 
 ### Associations for each model
