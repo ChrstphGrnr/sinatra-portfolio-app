@@ -1,11 +1,14 @@
 <h3>This is the show page for an individual instance of your model.</h3>
-
-<%=@user.name%>
+<br>
+<h4>Welcome <%=current_user.name%>!</h4>
 <br>
 <ol>
-    <%@user.trails.each do |trail|%>
+    <%current_user.trails.each do |trail|%>
         <li><%= trail.name%>
         <%= trail.description%></li>
     <%end%>
 </ol>
-    
+<br>
+<form method="post" action="signout">
+<input id="logoutForm" type="submit" value="Log Out" />
+</form>
