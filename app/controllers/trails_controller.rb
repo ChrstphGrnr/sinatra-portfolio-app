@@ -11,6 +11,7 @@ class TrailsController < ApplicationController
     post '/trails' do 
         binding.pry
         trail = Trail.create(params)
+        trail.user_id = current_user.id 
         redirect "/trails/#{trail.id}"
     end
     
@@ -21,7 +22,12 @@ class TrailsController < ApplicationController
 
 
     get "/trails/:id/edit" do 
-        erb :'trails/edit.html'
+        @trail = Trail.find(params[:id])
+        if @trail.user_id = current_user.id 
+            erb :'trails/edit.html'
+        else  
+            redirect '/trails'
+        end
     end
 
     patch "/trails/:id" do
