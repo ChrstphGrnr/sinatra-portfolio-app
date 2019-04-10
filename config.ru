@@ -11,6 +11,8 @@ use Rack::MethodOverride
 
 # here we will add other controlers with 'use'
 
-run ApplicationController
 use UsersController
+use TrailsController
+
+run ApplicationController
 
