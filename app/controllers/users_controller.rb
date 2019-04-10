@@ -73,10 +73,10 @@ class UsersController < ApplicationController
     redirect "/users"
   end
 
-  # POST /signout
+  
 
   get '/signout' do 
-    erb :'users/signout.html'
+    erb :'/users/signout.html'
   end
   
 
