@@ -4,3 +4,8 @@
 <br>
 <%=@trail.description%>
 
+<form method="post" action="/trails/<%=@trail.id%>">
+<input type="hidden" name="_method" value="delete"/>
+<input id="deleteForm" type="submit" value="Delete Trail" />
+</form>
+

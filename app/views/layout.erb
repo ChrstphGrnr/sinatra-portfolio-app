@@ -17,12 +17,13 @@
   <body>
     <div class="nav">
     <%if logged_in?%>
-      <a href="/users/signout">Log Out</a>
-    <%else%>
-      <a href="/login">Log In</a>
-    <%end%>
+      <a href="/signout">Log Out <%=current_user.name%></a> 
       <a href="/trails/new">Create New Trail</a>
       <a href="/trails">All Trails</a>
+    <%else%>
+      <p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to use this app!</p>
+    <%end%>
+      
     </div>
     
     <div class="wrapper">

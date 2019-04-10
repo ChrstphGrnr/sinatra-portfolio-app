@@ -1,7 +1,11 @@
 class TrailsController < ApplicationController
 
-    get '/trails/new' do 
-        erb :'trails/new.html'
+    get '/trails/new' do
+        if logged_in? 
+            erb :'trails/new.html'
+        else 
+            redirect '/login'
+        end
     end
 
     get '/trails' do 
@@ -9,7 +13,7 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do 
-        binding.pry
+        # binding.pry
         trail = Trail.create(params)
         trail.user_id = current_user.id 
         redirect "/trails/#{trail.id}"
@@ -31,7 +35,20 @@ class TrailsController < ApplicationController
     end
 
     patch "/trails/:id" do
-       redirect '/trails/:id'    
+        trail = Trail.find_by(id: params[:id])
+        trail.update(params)
+        redirect '/trails/:id'    
+    end
+
+    delete '/trails/:id' do 
+        trail = Trail.find_by(id: params[:id])
+        if trail.id == current_user.id 
+            trail.delete
+            redirect '/trails'
+        else 
+            redirect '/trails'
+        end
+        
     end
 
 end

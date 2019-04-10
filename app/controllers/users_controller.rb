@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   # POST /login
   post '/login' do 
     # binding.pry
+    
     @user = User.find_by(email: params[:email])
-    if @user.authenticate(params[:password])
+    if !!@user && @user.authenticate(params[:password])
       # binding.pry
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
   # POST: /users
   post "/users" do
     # binding.pry
-    if params[:name] != "" && params[:password] != "" && params[:email] != ""
+    if params[:name] != "" && params[:password] != "" && params[:email] != "" && !User.find_by(email: params[:email])
       User.create(params)
       session[:user_id] = User.last.id
       redirect "/users/#{User.last.id}"
@@ -74,14 +75,15 @@ class UsersController < ApplicationController
 
   
 
-  get '/users/signout' do 
+  get '/signout' do 
+    session.clear
     erb :'/users/signout.html'
   end
   
-
   post '/signout' do 
-    session.clear 
-    redirect '/users/signout'
+    session.clear
+    erb :'/users/signout.html'
   end
+  
 
 end
