@@ -1,6 +1,14 @@
 class TrailsController < ApplicationController
 
-    get '/hotdog' do 
-        "This works!"
+    get '/trails/new' do 
+        erb :'trails/new.html'
     end
+
+    get '/trails' do 
+        erb :'trails/index.html'
+    end
+     
+
+
+
 end
