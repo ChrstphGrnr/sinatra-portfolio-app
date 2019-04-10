@@ -1,1 +1,6 @@
-#This shows all Trails in order
+<h1>Here are all the Trails in our Database!</h1>
+
+<%Trail.all.each do |trail|%>
+    <%=trail.name%>
+    <%=trail.description%>
+<%end%>
