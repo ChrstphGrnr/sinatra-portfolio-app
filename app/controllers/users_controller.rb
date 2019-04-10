@@ -21,9 +21,8 @@ class UsersController < ApplicationController
   end
 
   # GET /signup
-
   get '/signup' do 
-    erb :'users/signup.html'
+    erb :'users/new.html'
   end
 
   
@@ -75,14 +74,14 @@ class UsersController < ApplicationController
 
   
 
-  get '/signout' do 
+  get '/users/signout' do 
     erb :'/users/signout.html'
   end
   
 
   post '/signout' do 
     session.clear 
-    redirect '/signout'
+    redirect '/users/signout'
   end
 
 end
