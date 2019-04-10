@@ -16,7 +16,11 @@
   </head>
   <body>
     <div class="nav">
-      <a href="/logout">Log Out</a>
+    <%if logged_in?%>
+      <a href="/users/signout">Log Out</a>
+    <%else%>
+      <a href="/login">Log In</a>
+    <%end%>
       <a href="/trails/new">Create New Trail</a>
       <a href="/trails/index">All Trails</a>
     </div>
