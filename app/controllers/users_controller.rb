@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
 
-  # GET /login
+ 
 
+  # GET /login
   get '/login' do 
     erb :'users/login.html' 
   end
 
+  # POST /login
   post '/login' do 
     # binding.pry
     @user = User.find_by(email: params[:email])
@@ -18,6 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /signup
 
   get '/signup' do 
     erb :'users/signup.html'
