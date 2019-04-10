@@ -1,1 +1,35 @@
-#This creates a new Trail
+<h1>This is the Trail Creator</h1>
+
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		
+		<form class='' method="post" action="/trails">
+			<div class="form_description">
+			    <h2>Create a new Trail!</h2>
+			<p>A trail is created with a name and a short description.</p>
+		    </div>						
+			<ul >
+            <li id="li_1" >
+		        <label class="description" for="name">Trail Name </label>
+		        <div>
+			        <input id="name" name="name" type="text" value=""/> 
+		        </div><p class="guidelines" id="guide_1"><small>Please enter the Trail's name.</small></p> 
+            </li>
+		    <li id="li_2" >
+		        <label class="description" for="description">Trail Description </label>
+		        <div>
+			        <input id="description" name="description" type="text" value=""/> 
+		        </div><p class="guidelines" id="guide_1"><small>Please enter a short description of the trail.</small></p> 
+            </li>		
+            
+			<li class="buttons">		    
+				<input id="saveForm" type="submit" value="Create Trail" />
+		    </li>
+			</ul>
+		</form>	
+	</div>
+	<img id="bottom" src="bottom.png" alt="">
+</body>
