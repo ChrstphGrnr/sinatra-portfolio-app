@@ -50,6 +50,7 @@ class UsersController < ApplicationController
   end
 
   # GET: /users/5
+  # make sure only your showpage is shown and not others!
   get "/users/:id" do
     if logged_in? 
       erb :"/users/show.html"
@@ -59,6 +60,7 @@ class UsersController < ApplicationController
   end
 
   # GET: /users/5/edit
+  # make sure you can only edit your own page and not others!
   get "/users/:id/edit" do
     erb :"/users/edit.html"
   end
@@ -69,6 +71,7 @@ class UsersController < ApplicationController
   end
 
   # DELETE: /users/5/delete
+  # make sure you can only delete your own page and not others! HELPER METHOD !
   delete "/users/:id/delete" do
     redirect "/users"
   end
