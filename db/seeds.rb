@@ -1,7 +1,11 @@
 # dummy data to test my app
 
+# Delete all prior database entries first!
 
-#Users
+User.all.each {|user|user.delete}
+Trail.all.each {|trail|trail.delete}
+
+# Users
 
 christoph = User.create(name: "Christoph", email: "asd@asd.com", password: "password")
 
