@@ -27,10 +27,10 @@
       <a href="#!" class="brand-logo center">TrailCollector</a>
       <%if logged_in?%>
         <ul class="left hide-on-med-and-down">
-          <li><a href="/signout">Sign Out</a></li>
+          <li><a href="/signout">Sign Out <%=current_user.name%></a> </li>
           <li><a href="/trails/new">New Trail</a></li>
           <li><a href="/trails">All Trails</a></li>
-          <!--- <li><a href="/users/:id/trails">My Trails</a>         Work on Users/collections first! ! ! --->    
+          <li><a href="/users/:id">My Trails</a></li>    
         </ul>
       <%else%>
         <ul class="left hide-on-med-and-down">
