@@ -1,6 +1,8 @@
-<h1>Here are all the Trails in our Database!</h1>
+<div class="container">
+    <h2>Trails Index</h2>
 
-<%Trail.all.each do |trail|%>
-    <%=trail.name%>
-    <%=trail.description%>
-<%end%>
+        <%Trail.all.each do |trail|%>
+            <%=trail.name%>
+            <%=trail.description%>
+        <%end%>
+</div>
