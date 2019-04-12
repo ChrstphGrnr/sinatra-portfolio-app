@@ -1,7 +1,0 @@
-class CollectionsController < ApplicationController 
-
-
-
-
-    
-end
