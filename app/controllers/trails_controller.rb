@@ -27,7 +27,7 @@ class TrailsController < ApplicationController
 
     get "/trails/:id/edit" do 
         @trail = Trail.find(params[:id])
-        if @trail.user_id = current_user.id 
+        if @trail.user_id == current_user.id 
             erb :'trails/edit.html'
         else  
             redirect '/trails'
@@ -35,13 +35,13 @@ class TrailsController < ApplicationController
     end
 
     patch "/trails/:id" do
-        trail = Trail.find_by(id: params[:id])
+        trail = Trail.find(params[:id])
         trail.update(params)
         redirect '/trails/:id'    
     end
 
     delete '/trails/:id' do 
-        trail = Trail.find_by(id: params[:id])
+        trail = Trail.find(params[:id])
         if trail.id == current_user.id 
             trail.delete
             redirect '/trails'
