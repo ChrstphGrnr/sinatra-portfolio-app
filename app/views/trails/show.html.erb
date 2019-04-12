@@ -1,15 +1,14 @@
-<h1>This is a specific Trails page</h1>
+<div class="container">
+    <%=@trail.name%>
+    <br>
+    <%=@trail.description%>
 
-<%=@trail.name%>
-<br>
-<%=@trail.description%>
+    <form method="post" action="/trails/<%=@trail.id%>">
+    <input type="hidden" name="_method" value="delete"/>
+    <input id="deleteForm" type="submit" value="Delete Trail" />
+    </form>
 
-<form method="post" action="/trails/<%=@trail.id%>">
-<input type="hidden" name="_method" value="delete"/>
-<input id="deleteForm" type="submit" value="Delete Trail" />
-</form>
-
-<form method="post" action="/trails/<%=@trail.id%>/edit">
-<input id="editForm" type="submit" value="Edit Trail" />
-</form>
-
+    <form method="post" action="/trails/<%=@trail.id%>/edit">
+    <input id="editForm" type="submit" value="Edit Trail" />
+    </form>
+</div>
