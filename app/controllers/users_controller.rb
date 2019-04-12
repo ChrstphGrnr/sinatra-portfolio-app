@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
  
   get "/users/:id" do
-      if logged_in? && current_user.id == params[:id]
+      if logged_in? 
         erb :"/users/show.html"
       else
         redirect '/login'
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
 
  
   get "/users/:id/edit" do
-      if logged_in? && current_user.id == params[:id]
+      if logged_in? 
         erb :"/users/edit.html"
       else 
         redirect '/login' 
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
     erb :'/users/signout.html'
   end
   
-  
+
   post '/signout' do 
     session.clear
     erb :'/users/signout.html'
