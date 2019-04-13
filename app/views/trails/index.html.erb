@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="card-panel blue-grey lighten-4">
+    <div class="card-panel teal lighten-1">
         <span class="grey-text text-darken-3 center"><h5>Trails Index</h5></span>
     </div>
 
@@ -8,18 +8,21 @@
 
     <%Trail.all.each do |trail|%>
 
-        <div class="col s6">
-          <div class="card">
+        <div class="col s3">
+          <div class="card small teal lighten-2 z-depth-5">
             <div class="card-image">
               <img src="/images/<%=trail.image%>" class="responsive-img">
-              <span class="card-title"><%=trail.name%></span>
-              
+              <span class="card-title"><%=trail.name%></span>  
             </div>
-            <div class="card-content">
+            <div class="card-content white-text">
                 <p><%=trail.description%></p>
             </div>
             <div class="card-action">
-              <a href="/trails/<%=trail.id%>/edit">Edit this Trail.</a>
+              <%if trail.user_id == current_user.id%>
+                <a href="/trails/<%=trail.id%>/edit"><i class="material-icons icon-white darken-4">edit</i></a>
+                <a href="trails/<%=trail.id%>/delete"><i class="material-icons icon-white darken-4">delete</i></a>
+              <%end%>
+              <a href="trails/<%=trail.id%>"><i class="material-icons icon-white darken-4">launch</i></a>
             </div>
           </div>
         </div>
