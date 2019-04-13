@@ -1,14 +1,33 @@
 <div class="container">
-    <%=@trail.name%>
+    <div class="card-panel blue-grey lighten-4">
+        <span class="grey-text text-darken-3"><%= @trail.name%></span>
+    </div>
+    
     <br>
     <%=@trail.description%>
+    <br>
+    <img src="/images/<%=@trail.image%>" class="responsive-img">
+    <br>
+    
+    <div class="row">
+        <div class="col 12">
+        <span class="icon"><form method="post" action="/trails/<%=@trail.id%>">
+        <input type="hidden" name="_method" value="delete">
+            <button class="waves-effect waves-light btn" type="submit"><i class="material-icons">delete</i></button>
+        </form>
 
-    <form method="post" action="/trails/<%=@trail.id%>">
-    <input type="hidden" name="_method" value="delete"/>
-    <input id="deleteForm" type="submit" value="Delete Trail" />
-    </form>
-
-    <form method="post" action="/trails/<%=@trail.id%>/edit">
-    <input id="editForm" type="submit" value="Edit Trail" />
-    </form>
+        <form method="post" action="/trails/<%=@trail.id%>">
+        <input type="hidden" name="_method" value="patch">
+            <button class="waves-effect waves-light btn" type="submit"><i class="material-icons">edit</i></button>
+        </form>
+        </span>
+        </div>    
+    </div>
+    
 </div>
+
+
+
+
+
+
