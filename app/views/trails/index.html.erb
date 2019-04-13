@@ -1,8 +1,30 @@
 <div class="container">
-    <h2>Trails Index</h2>
 
-        <%Trail.all.each do |trail|%>
-            <%=trail.name%>
-            <%=trail.description%>
-        <%end%>
+    <div class="card-panel blue-grey lighten-4">
+        <span class="grey-text text-darken-3 center"><h5>Trails Index</h5></span>
+    </div>
+
+    <div class="row">
+
+    <%Trail.all.each do |trail|%>
+
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/<%=trail.image%>" class="responsive-img">
+              <span class="card-title"><%=trail.name%></span>
+              
+            </div>
+            <div class="card-content">
+                <p><%=trail.description%></p>
+            </div>
+            <div class="card-action">
+              <a href="/trails/<%=trail.id%>/edit">Edit this Trail.</a>
+            </div>
+          </div>
+        </div>
+
+    <%end%>
+    </div>
+    
 </div>
