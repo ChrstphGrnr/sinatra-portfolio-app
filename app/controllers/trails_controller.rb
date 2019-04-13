@@ -1,4 +1,5 @@
 class TrailsController < ApplicationController
+    
 
     get '/trails/new' do
         if logged_in? 
@@ -13,16 +14,18 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do 
-        # binding.pry
-        filename = params[:file][:filename]
-        file = params[:file][:tempfile]
-
-        trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: params[:file][:filename])
-        
-        File.open("public/images/#{filename}", 'wb') do |f|
-            f.write(file.read)
+        binding.pry
+        if params[:file]
+            filename = params[:file][:filename]
+            file = params[:file][:tempfile]
+            trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: params[:file][:filename])
+            File.open("public/images/#{filename}", 'wb') do |f|
+                f.write(file.read)
+            end
+        else
+            trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id)
         end
-        
+
         redirect "/trails/#{trail.id}"
     end
     
