@@ -1,29 +1,19 @@
 <div class="container">
 		
-	<form class='' method="post" action="/trails/<%=@trail.id%>">
+	<form method="post" action="/trails/<%=@trail.id%>">
 	<input type="hidden" name="_method" value="patch"/>
-		<div class="form_description">
-		    <h2>Edit <%=@trail.name%></h2>
+			
 		<p>You can edit the name and description of this trail.</p>
-	    </div>						
-		<ul >
-        <li id="li_1" >
+	    
 	        <label class="description" for="name">Trail Name</label>
-	        <div>
-		        <input id="name" name="name" type="text" value="<%=@trail.name%>"/> 
-	        </div><p class="guidelines" id="guide_1"><small>Please enter the Trail's new name.</small></p> 
-        </li>
-	    <li id="li_2" >
-	        <label class="description" for="description">Trail Description </label>
-	        <div>
-		        <input id="description" name="description" type="text" value="<%=@trail.description%>"/> 
-	        </div><p class="guidelines" id="guide_1"><small>Please enter a short description of the trail.</small></p> 
-        </li>		
+		    <input name="name" type="text" value="<%=@trail.name%>"/>  
         
-		<li class="buttons">		    
-			<input id="saveForm" type="submit" value="Update Trail" />
-	    </li>
-		</ul>
+	        <label for="textarea1">Trail Description</label>
+		    <input name="description" type="text" value="<%=@trail.description%>"/>
+		
+		<button class="btn waves-effect waves-light" type="submit">Update Trail
+  		</button>
+		
 	</form>	
 </div
 	
