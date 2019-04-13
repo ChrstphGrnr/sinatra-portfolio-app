@@ -8,19 +8,22 @@
 
     <%current_user.trails.each do |trail|%>
 
-        <div class="col s6">
-          <div class="card">
+        <div class="col s3">
+          <div class="card small teal lighten-2 z-depth-5">
             <div class="card-image">
               <img src="/images/<%=trail.image%>" class="responsive-img">
-              <span class="card-title"><%=trail.name%></span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/trails/<%=trail.id%>/edit"><i class="material-icons">edit</i></a>
+              <span class="card-title"><%=trail.name%></span>  
             </div>
-            <div class="card-content">
+            <div class="card-content white-text">
                 <p><%=trail.description%></p>
+            </div>
+            <div class="card-action">
+              <a href="/trails/<%=trail.id%>/edit"><i class="material-icons icon-white darken-4">edit</i></a>
+              <a href="/trails/<%=trail.id%>"><i class="material-icons icon-white darken-4">launch</i></a>
+              <a href="/trails/<%=trail.id%>/delete"><i class="material-icons icon-white darken-4">delete</i></a>
             </div>
           </div>
         </div>
-
     <%end%>
     </div>
     
