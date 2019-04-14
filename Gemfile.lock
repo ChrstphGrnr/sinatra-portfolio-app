@@ -118,6 +118,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.2, >= 4.2.6)
   bcrypt
+  bundler
   capybara
   database_cleaner!
   foreman
