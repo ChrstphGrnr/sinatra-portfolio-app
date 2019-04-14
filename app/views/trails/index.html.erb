@@ -1,3 +1,4 @@
+<body>
 <div class="container">
 
     <div class="card-panel teal lighten-1">
@@ -18,11 +19,15 @@
                 <p><%=trail.description%></p>
             </div>
             <div class="card-action">
+            <%if logged_in?%>
               <%if trail.user_id == current_user.id%>
                 <a href="/trails/<%=trail.id%>/edit"><i class="material-icons icon-white darken-4">edit</i></a>
                 <a href="trails/<%=trail.id%>/delete"><i class="material-icons icon-white darken-4">delete</i></a>
               <%end%>
               <a href="trails/<%=trail.id%>"><i class="material-icons icon-white darken-4">launch</i></a>
+            <%else%>
+              <a href="trails/<%=trail.id%>"><i class="material-icons icon-white darken-4">launch</i></a>
+            <%end%>
             </div>
           </div>
         </div>
@@ -31,3 +36,4 @@
     </div>
     
 </div>
+</body>
