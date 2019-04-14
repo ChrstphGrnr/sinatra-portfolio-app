@@ -1,3 +1,4 @@
+<body>
 <div class="container">
 
     <div class="card-panel blue-grey lighten-4">
@@ -27,11 +28,13 @@
     <%end%>
     </div>
     
+    <form method="post" action="/signout">
+      <button class="waves-effect waves-light btn" type="submit" name="action">
+        Sign Out
+      </button>
+    </form>
 </div>
 
 
-<form method="post" action="/signout">
-    <button class="waves-effect waves-light btn" type="submit" name="action">
-    Sign Out
-    </button>
-</form>
+
+</body>
