@@ -1,3 +1,4 @@
+<body>
 <div class="container">
     <div class="card-panel blue-grey lighten-4">
         <span class="grey-text text-darken-3">
@@ -14,6 +15,8 @@
     <br>
    
     <div id="container">
+
+    <%if logged_in?%>
         
         <form method="post" action="/trails/<%=@trail.id%>">
         <input type="hidden" name="_method" value="delete">
@@ -25,12 +28,14 @@
         <input type="hidden" name="_method" value="patch">
             <button class="waves-effect waves-light btn" type="submit"><i class="material-icons">edit</i></button>
         </form>
+
+    <%end%>
        
     </div>
     
     
 </div>
-
+</body>
 
 
 
