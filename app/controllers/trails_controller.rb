@@ -15,7 +15,6 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do 
-        binding.pry
         if !params.empty?
             if params[:file]
                 filename = params[:file][:filename]
