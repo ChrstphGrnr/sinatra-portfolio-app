@@ -22,8 +22,8 @@ group :test do
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
 
-group :development do 
-  gem 'sqlite3', '1.3.13'
-  gem 'shotgun'
-  gem 'pry'
-end
+# group :development do 
+#   gem 'sqlite3', '1.3.13'
+#   gem 'shotgun'
+#   gem 'pry'
+# end
