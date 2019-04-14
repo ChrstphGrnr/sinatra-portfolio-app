@@ -1,34 +1,30 @@
 <body id="main_body" >
-	
-	<img id="top" src="top.png" alt="">
 	<div class="container">
-	
+		<h2>User Login</h2>
+		<p>	Please log in using your email and password. <br>
+			If you you don't have an account yet, please <a href="/signup" class="grey-text">Sign Up</a>.</p>
 		
-		<form class='' method="post" action="/login">
-					<div class="form_description">
-			<h2>User Login</h2>
-			<p>	Please log in using your email and password. <br>
-					If you you don't have an account yet, please <a href="/signup">Sign Up</a>.</p>
-		</div>						
-								
-		<div class="input-field">
-			<label for="email">Email </label>
-			
-			<input id="email" name="email" required type="text" value="" required/> 
-		</div>
-			<p class="guidelines" id="guide_1"><small>Please enter your email address. </small></p> 
-			
-		<div class="input-field">
-			<label class="description" for="password">Password </label>
-			<input id="password" name="password" required type="password" value="" required/> 
-		</div>
-			<p class="guidelines" id="guide_2"><small>Please enter your password.</small></p> 
-		
-		<button class="btn waves-effect waves-light" type="submit" name="action">Log In
-    		<i class="material-icons right">send</i>
-  		</button>    			    
-
+		<form method="post" action="/login" class="">
+		<ul>
+			<li id="li_1" >
+			<div class="input-field">
+				<input id="email" name="email" class="transparent" type="text" required /> 
+				<label for="email">Email</label>
+			</div>
+			<li id="li_2">
+			</li>
+			<div class="input-field">
+				<input id="password" name="password" class="transparent" type="password" required /> 
+				<label for="email">Password</label>
+			</div>
+			<li id="li_3">
+			</li>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Log In
+    			<i class="material-icons right">send</i>
+  			</button>    			    
+			</li>
 		</form>	
+		</div>
 	</div>
-		
+
 </body>
