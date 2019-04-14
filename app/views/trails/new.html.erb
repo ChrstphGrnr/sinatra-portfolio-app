@@ -1,33 +1,40 @@
+<body>
 <div class="container">
 	
 	<form class='' method="post" action="/trails", enctype="multipart/form-data">
 		
-		<h2>Create a new Trail!</h2>
+		<h3>Create a new Trail!</h3>
 		<p>A trail is created with a name and a short description.</p>
 	    						
 		<ul >
         	<li id="li_1" >
-	    	    <label class="description" for="name">Trail Name </label>
+	    	    <label for="name">Trail Name </label>
 			    	<input id="name" name="name" type="text" value="" required/> 
 	    	    <small>Please enter the Trail's name.</small>
+				<br>
+				<br>
         	</li>
 	    	<li id="li_2" >
 	    	    <li id="li_2" >
 	        	<label for="textarea1">Trail Description </label>
 		    	<textarea name="description" id="textarea1" class="materialize-textarea" required></textarea>
-	    	    <small>Please enter your description of the trail.</small>
+	    	    <small>Please enter your description of the trail.</small>	
         	</li>				    
 			<br>
-			<br>
+	
 			<li id="li_3">
-				<label class="image" for="file">Trail Image </label>
-					<input name="file" type="file"><br>
-				<small>Please select an image file for this trail.</small>
+			<div class="file-field input-field">
+    		  <div class="btn waves-effect waves-light color teal lighten-2 z-depth-5">
+    		    <i class="material-icons">add_a_photo</i>
+    		    <input type="file" name="file">
+    		  </div>
+    		</div>
+			
 			<br>
 			<br>
 			<br>	
 	    	<li>
-				<button class="btn waves-effect waves-light" type="submit">Create Trail
+				<button class="btn-large waves-effect waves-light color teal lighten-2 z-depth-5" type="submit">Create Trail
     				<i class="material-icons right">panorama</i>
   				</button>
 			</li>
@@ -35,5 +42,5 @@
 		</ul>
 	</form>	
 </div>
-	
+</body>
 
