@@ -13,7 +13,7 @@ gem 'pg', '0.20'
 gem 'rails_12factor'
 gem 'rack-flash3'
 gem 'foreman'
-gem 'bundler'
+gem 'bundler', '>= 2.0.1'
 
 
 group :test do
