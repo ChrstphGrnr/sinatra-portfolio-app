@@ -25,7 +25,7 @@ class TrailsController < ApplicationController
                     f.write(file.read)
                 end
             else
-                trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: "mountains-background-small.jpg")
+                trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: "default.jpg")
             end
             redirect "/trails/#{trail.id}"
         else 
@@ -63,6 +63,24 @@ class TrailsController < ApplicationController
             redirect 'trails' 
         end 
     end
+
+    get '/trails/:id/delete' do 
+        trail = Trail.find(params[:id])
+        if logged_in?
+            if trail.user_id == current_user.id 
+                trail.delete
+                flash[:message] = "Successfully deleted #{trail.name}."
+                redirect '/trails'
+            else 
+                flash[:error] = "You do not have permission to delete this trail."
+                redirect '/trails'
+            end
+        else
+            flash[:error] = "You do not have permission to edit this trail."
+            redirect 'trails' 
+        end
+    end
+
 
     delete '/trails/:id' do 
         trail = Trail.find(params[:id])
