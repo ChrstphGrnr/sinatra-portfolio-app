@@ -25,7 +25,7 @@ class TrailsController < ApplicationController
                     f.write(file.read)
                 end
             else
-                trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id)
+                trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: "mountains-background-small.jpg")
             end
             redirect "/trails/#{trail.id}"
         else 
