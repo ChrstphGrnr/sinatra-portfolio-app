@@ -15,7 +15,7 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do 
-        if !params.empty? || !params[:name].empty || !params[:description].empty?
+        if !params.empty? || !params[:name].empty? || !params[:description].empty?
             if params[:file]
                 filename = params[:file][:filename]
                 file = params[:file][:tempfile]
