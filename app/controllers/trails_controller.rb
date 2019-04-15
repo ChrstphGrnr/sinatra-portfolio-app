@@ -76,4 +76,16 @@ class TrailsController < ApplicationController
         
     end
 
+    get '/trails/:id/delete' do 
+        trail = Trail.find(params[:id])
+        if logged_in? && trail.user_id == current_user.id 
+            trail.delete
+            flash[:message] = "Successfully deleted #{trail.name}."
+            redirect '/trails'
+        else 
+            flash[:error] = "You do not have permission to delete this trail."
+            redirect '/trails'
+        end
+    end
+
 end
