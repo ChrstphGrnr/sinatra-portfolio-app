@@ -15,7 +15,7 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do 
-        if !params.empty? || !params[:name].empty? || !params[:description].empty?
+        if !params.empty?
             if params[:file]
                 filename = params[:file][:filename]
                 file = params[:file][:tempfile]
@@ -24,7 +24,7 @@ class TrailsController < ApplicationController
                     f.write(file.read)
                 end
             else
-                trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id)
+                trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: "default.jpg")
             end
             redirect "/trails/#{trail.id}"
         else 
