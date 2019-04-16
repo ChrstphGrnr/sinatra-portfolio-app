@@ -16,7 +16,7 @@
    
     <div id="container">
 
-    <%if logged_in?%>
+    <%if logged_in? && @trail.id == current_user.id%>
         
         <form method="post" action="/trails/<%=@trail.id%>">
         <input type="hidden" name="_method" value="delete">
@@ -25,7 +25,8 @@
         <br>
 
         <a href="/trails/<%=@trail.id%>/edit">
-            <button class="waves-effect waves-light btn" type="submit"><i class="material-icons">edit</i></button></a>
+            <button class="waves-effect waves-light btn" type="submit"><i class="material-icons">edit</i>
+        </button></a>
 
     <%end%>
        
