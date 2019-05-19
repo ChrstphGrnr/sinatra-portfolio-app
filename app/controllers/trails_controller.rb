@@ -15,11 +15,16 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do 
+        # params =>{xx:"hello", }
         if !params.empty?
             if params[:file]
                 filename = params[:file][:filename]
                 file = params[:file][:tempfile]
                 trail = Trail.create(name: params[:name], description: params[:description], user_id: current_user.id, image: params[:file][:filename])
+                # trail = Trail.create(name: params[:name], description: params[:description], image: params[:file][:filename])
+                # current_user.trails.build(params)
+                # current_user.trails << trail
+                
                 File.open("public/images/#{filename}", 'wb') do |f|
                     f.write(file.read)
                 end
